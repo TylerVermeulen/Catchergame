@@ -18,13 +18,23 @@ public class Controller : MonoBehaviour
 
         float horizontal = Input.GetAxis("Horizontal");
 
-        transform.Translate(horizontal * Time.deltaTime * speed, 0f, 0f);
         
         if (horizontal != 0)
         {
+            if(horizontal > 0)
+            {
+                 transform.rotation = Quaternion.Euler(0, 90, 0);
+
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, -90, 0);
+
+            }
             animator.SetBool("IsWalking", true);
         }
         else animator.SetBool("IsWalking", false);
+
     }
 
 }

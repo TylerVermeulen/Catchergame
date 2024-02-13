@@ -19,7 +19,7 @@ public class Dropping : MonoBehaviour
             nextspawn = DateTime.Now.AddSeconds(rand.Next(1,5));
             
             if (rand.Next(1, 100)<= 20){
-                Instantiate(cubePrefab, transform.position, Quaternion.identity);
+                Instantiate(cubePrefab, transform.position, Quaternion.Euler(90, 90, 90));
             }
         }
     }
