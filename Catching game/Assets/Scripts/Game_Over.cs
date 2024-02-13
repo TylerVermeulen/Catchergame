@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Game_Over : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int CurrentLife = 5;
+
+
+
+    private void FixedUpdate()
     {
-        
+        //text.text = "hello world";
+        // scoreDisplay.GetComponent<Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.name == "Floor")
+        {
+            Destroy(gameObject);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().health--;
+        }
+
     }
 }

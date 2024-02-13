@@ -18,7 +18,7 @@ public class Dissapearing : MonoBehaviour
     {
         if (collision.gameObject.name == "Astrounalts")
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             CurrentScore++;
         }
     }

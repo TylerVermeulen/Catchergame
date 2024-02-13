@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
+
 {
     public float speed;
+    public int health = 5;
     [SerializeField] private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,11 @@ public class Controller : MonoBehaviour
         }
         else animator.SetBool("IsWalking", false);
 
+        if (health == 0)
+        {
+            SceneManager.LoadScene("Catcher");
+
+        }
     }
 
 }
