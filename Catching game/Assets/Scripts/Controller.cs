@@ -20,7 +20,7 @@ public class Controller : MonoBehaviour
 
         transform.Translate(horizontal * Time.deltaTime * speed, 0f, 0f);
         
-        if (horizontal != 0 || vertical != 0)
+        if (horizontal != 0)
         {
             animator.SetBool("IsWalking", true);
         }
